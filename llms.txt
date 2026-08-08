@@ -1,0 +1,8 @@
+# FCM Notification Tester
+
+FCM Notification Tester provides a simple online Firebase Cloud Messaging (FCM) HTTP v1 notification tester.
+
+Primary tool: {{SITE_URL}}/
+Guides: {{SITE_URL}}/docs.html
+
+The tester accepts a Firebase service account JSON credential, an FCM device registration token, a notification title, message, and optional custom data. It authenticates with a short-lived OAuth 2.0 token and sends through the FCM HTTP v1 API.

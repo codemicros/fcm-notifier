@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F2F6FD"/>
+  <rect x="70" y="62" width="1060" height="506" rx="34" fill="#FFFFFF" stroke="#DCE5F2" stroke-width="2"/>
+  <rect x="112" y="108" width="64" height="64" rx="16" fill="#2563EB"/>
+  <path d="M144 121c-7.2 0-12.5 5.4-12.5 13.3v6.1c0 2.6-.8 5.1-2.4 7.2l-2.2 2.9c-1.1 1.5-.1 3.6 1.8 3.6h30.6c1.9 0 2.9-2.1 1.8-3.6l-2.2-2.9a11.9 11.9 0 0 1-2.4-7.2v-6.1c0-7.9-5.3-13.3-12.5-13.3Z" fill="#fff" transform="translate(0 -5) scale(.72) translate(55 51)"/>
+  <circle cx="161" cy="125" r="8" fill="#F59E0B" stroke="#2563EB" stroke-width="3"/>
+  <text x="194" y="149" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#0B1730">FCM Notification Tester</text>
+  <rect x="112" y="220" width="198" height="38" rx="19" fill="#EEF4FF" stroke="#C7D7FE"/>
+  <circle cx="136" cy="239" r="7" fill="#0F9F78"/>
+  <text x="154" y="246" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#1D4ED8">FCM HTTP v1</text>
+  <text x="112" y="338" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="800" fill="#0B1730">FCM Notification Tester</text>
+  <text x="112" y="397" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#62708A">Test Firebase push notifications online with a simple device-first workflow.</text>
+  <rect x="112" y="454" width="224" height="60" rx="14" fill="#2563EB"/>
+  <text x="154" y="493" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">Send Notification</text>
+  <rect x="820" y="152" width="220" height="318" rx="42" fill="#101828"/>
+  <rect x="839" y="177" width="182" height="268" rx="30" fill="#F8FAFC"/>
+  <rect x="863" y="211" width="134" height="88" rx="18" fill="#FFFFFF" stroke="#D9E2F2"/>
+  <circle cx="886" cy="236" r="13" fill="#2563EB"/>
+  <rect x="907" y="224" width="66" height="10" rx="5" fill="#1F2937"/>
+  <rect x="907" y="246" width="48" height="8" rx="4" fill="#A3AEC2"/>
+  <rect x="863" y="328" width="134" height="14" rx="7" fill="#DCE6F7"/>
+  <rect x="863" y="357" width="96" height="14" rx="7" fill="#E8EDF6"/>
+  <circle cx="1012" cy="456" r="48" fill="#0F9F78"/>
+  <path d="m991 456 14 14 28-31" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="744" y="496" width="116" height="20" rx="10" fill="#FDE68A"/>
+  <rect x="872" y="496" width="82" height="20" rx="10" fill="#DDD6FE"/>
+</svg>

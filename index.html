@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FCM Notification Tester - Test Firebase Push Notifications Online</title>
+  <meta name="description" content="Free FCM notification tester for Firebase Cloud Messaging HTTP v1. Upload or paste your service account JSON, enter a device token, title, message and optional custom data, then send a test push notification.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#2958d6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!--GOOGLE_SITE_VERIFICATION-->
+  <link rel="canonical" href="{{SITE_URL}}/">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <meta property="og:title" content="FCM Notification Tester - Test Firebase Push Notifications Online">
+  <meta property="og:description" content="A simple Firebase push notification tester for FCM HTTP v1. Upload your service account JSON, paste a device token and send a test notification.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{SITE_URL}}/">
+  <meta property="og:image" content="{{SITE_URL}}/assets/img/fcm-notification-tester.png">
+  <meta property="og:site_name" content="FCM Notification Tester">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FCM Notification Tester">
+  <meta name="twitter:description" content="Test Firebase Cloud Messaging push notifications online with FCM HTTP v1.">
+  <meta name="twitter:image" content="{{SITE_URL}}/assets/img/fcm-notification-tester.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/config.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebSite",
+        "@id":"{{SITE_URL}}/#website",
+        "url":"{{SITE_URL}}/",
+        "name":"FCM Notification Tester",
+        "description":"Online Firebase Cloud Messaging notification testing tools and practical FCM guides."
+      },
+      {
+        "@type":"SoftwareApplication",
+        "@id":"{{SITE_URL}}/#fcm-notification-tester",
+        "name":"FCM Notification Tester",
+        "url":"{{SITE_URL}}/",
+        "applicationCategory":"DeveloperApplication",
+        "operatingSystem":"Web",
+        "isAccessibleForFree":true,
+        "description":"A browser-based Firebase Cloud Messaging HTTP v1 push notification tester that accepts a service account JSON file, FCM device token, notification title, message and optional custom data.",
+        "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="./" aria-label="FCM Notification Tester home">
+      <span class="brand-mark"><img class="brand-icon" src="assets/img/brand-icon.png" alt="FCM Notification Tester icon"></span>
+      <span class="brand-text"><span class="brand-name"><span class="brand-fcm">FCM</span> Notification Tester</span><small>Firebase push notification tool</small></span>
+    </a>
+    <button class="menu-button" type="button" data-menu-button aria-label="Open menu" aria-expanded="false"><img src="assets/icons/menu.svg" alt=""></button>
+    <nav class="nav" data-menu aria-label="Main navigation">
+      <a href="#tester">Tester</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="docs.html">Guides</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="#tester"><img src="assets/icons/send.svg" alt="">Open tester</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="page-shell hero-grid">
+      <div class="hero-copy">
+        <div class="hero-badges">
+          <span class="eyebrow"><span class="eyebrow-dot"></span> Firebase Cloud Messaging HTTP v1</span>
+          <span class="free-badge">Free developer tool</span>
+        </div>
+        <h1 class="hero-title"><span class="hero-title-fcm">FCM</span><span class="hero-title-rest">Notification Tester</span></h1><div class="title-accent" aria-hidden="true"><i></i><i></i><i></i></div>
+        <p class="hero-lead">Send a real Firebase push notification in seconds. Upload your service account JSON, paste a device token, add your title and message, then send.</p>
+        <div class="hero-actions">
+          <a class="primary-hero-cta" href="#tester"><img src="assets/icons/send.svg" alt="">Test a notification</a>
+          <a class="secondary-hero-cta" href="#how-it-works">See how it works</a>
+        </div>
+        <div class="hero-trust" aria-label="Tool highlights">
+          <span class="trust-chip"><span class="dot blue"></span>FCM HTTP v1</span>
+          <span class="trust-chip"><span class="dot teal"></span>No signup</span>
+          <span class="trust-chip"><span class="dot amber"></span>One-device testing</span>
+          <span class="trust-chip"><span class="dot violet"></span>Optional custom data</span>
+        </div>
+      </div>
+      <div class="hero-visual-wrap">
+        <div class="hero-visual-card">
+          <div class="visual-card-top">
+            <div class="visual-brand"><img src="assets/img/brand-icon.png" alt=""><span><strong>FCM Notification Tester</strong><small>Website → Firebase → Device</small></span></div>
+            <span class="live-badge"><span></span>HTTP v1</span>
+          </div>
+          <div class="hero-visual"><img src="assets/img/fcm-tester-visual.svg" alt="FCM notification flow from website through Firebase to a phone"></div>
+          <div class="visual-card-bottom"><span>Service account JSON</span><span>Device token</span><span>Push delivered</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-wrap page-shell" id="tester" aria-label="Firebase notification tester">
+    <div class="tool-card">
+      <div class="tool-topbar">
+        <div class="tool-title"><span class="tool-brand-icon"><img src="assets/img/brand-icon.png" alt=""></span><div><strong>Send a test notification</strong><span>Everything you need. Nothing you don’t.</span></div></div>
+        <span class="status-badge">HTTP v1 ready</span>
+      </div>
+      <form id="fcm-form" autocomplete="off"><div class="form-inner">
+        <div class="form-section">
+          <div class="section-heading"><span class="icon-tile blue"><img src="assets/icons/key.svg" alt=""></span><div><h2>Firebase service account</h2><p>Upload the JSON key from Firebase, or paste the JSON below.</p></div></div>
+          <label class="upload-box" for="serviceAccountFile"><input id="serviceAccountFile" type="file" accept="application/json,.json"><span class="upload-copy"><span class="upload-icon"><img src="assets/icons/upload.svg" alt=""></span><strong>Choose service account JSON</strong><span id="fileState">No file selected</span></span></label>
+          <div class="or-line">or paste JSON</div>
+          <div class="field"><label for="serviceAccount">Service account JSON</label><textarea id="serviceAccount" class="textarea credentials" spellcheck="false" autocomplete="off" placeholder='{"type":"service_account","project_id":"your-project", ...}'></textarea><div class="security-note"><img src="assets/icons/shield.svg" alt=""><span>Credentials are used only for the current send request by our application code and are not saved to localStorage, cookies, or a database.</span></div></div>
+        </div>
+        <div class="form-section">
+          <div class="section-heading"><span class="icon-tile violet"><img src="assets/icons/device.svg" alt=""></span><div><h2>Notification</h2><p>Paste the device token and enter the message you want to test.</p></div></div>
+          <div class="field"><label for="deviceToken">FCM device token</label><textarea id="deviceToken" class="textarea token" spellcheck="false" autocomplete="off" placeholder="Paste the Firebase Cloud Messaging registration token"></textarea></div>
+          <div class="field"><label for="notificationTitle">Title</label><input id="notificationTitle" class="input" type="text" maxlength="180" placeholder="Test notification"></div>
+          <div class="field"><label for="notificationMessage">Message</label><textarea id="notificationMessage" class="textarea" maxlength="2000" placeholder="This is a test Firebase push notification."></textarea></div>
+          <div class="field"><div class="label-row"><label for="customData">Custom data</label><span class="optional">Optional JSON object</span></div><textarea id="customData" class="textarea data" spellcheck="false" placeholder='{"screen":"home","id":"123"}'></textarea></div>
+          <button id="sendButton" class="send-button" type="submit"><img src="assets/icons/send.svg" alt=""><span class="button-label">Send Notification</span></button>
+          <div id="result" class="result" hidden role="status" aria-live="polite"><strong id="resultTitle"></strong><p id="resultText"></p></div>
+        </div>
+      </div></form>
+    </div>
+  </section>
+
+  <section class="compatibility-strip page-shell" aria-label="Supported app platforms">
+    <div class="compat-copy"><strong>Works with your Firebase app</strong><span>Use any valid FCM registration token from your client.</span></div>
+    <div class="compat-list"><span>Flutter</span><span>Android</span><span>iOS</span><span>Web</span></div>
+  </section>
+
+  <div class="ad-host" data-ad-slot="top" hidden aria-label="Advertisement"></div>
+
+  <section class="content-section alt" id="how-it-works"><div class="page-shell"><div class="content-head"><span class="section-kicker">How it works</span><h2>From Firebase JSON to a test push in three steps</h2><p>A focused workflow for testing real-device delivery with the current Firebase Cloud Messaging HTTP v1 API.</p></div><div class="steps">
+    <article class="step"><span class="step-icon"><img src="assets/icons/key.svg" alt=""></span><h3>Add the Firebase JSON key</h3><p>Download a service account private key from Firebase Project settings, then upload or paste it into the tester.</p></article>
+    <article class="step"><span class="step-icon"><img src="assets/icons/device.svg" alt=""></span><h3>Paste the device token</h3><p>Use the FCM registration token returned by your Android, iOS, Flutter, or web client.</p></article>
+    <article class="step"><span class="step-icon"><img src="assets/icons/send.svg" alt=""></span><h3>Send the notification</h3><p>Add a title, message, or optional custom data. The tool authenticates and sends through FCM HTTP v1.</p></article>
+  </div></div></section>
+
+  <div class="ad-host" data-ad-slot="middle" hidden aria-label="Advertisement"></div>
+
+  <section class="content-section"><div class="page-shell two-column"><div class="prose"><h2>A simple, reliable Firebase push notification tester for HTTP v1</h2><p>FCM Notification Tester is built for developers who need a quick way to test Firebase Cloud Messaging without creating a Postman collection or writing a temporary backend script. The tester sends a notification to one FCM device token and supports optional custom data.</p><p>The old FCM legacy HTTP send API used a static server key. Modern Firebase sending uses the HTTP v1 API and OAuth 2.0 authorization. This tool reads the project ID and signing credentials from your Firebase service account JSON, mints a short-lived access token on the server, and sends the message to the FCM v1 endpoint for that project.</p><p>If a Firebase notification is not showing on your device, check the device registration token, app notification permissions, Android notification-channel setup, APNs configuration for Apple platforms, and the Firebase project associated with the token.</p></div><aside class="side-note"><div class="note-head"><span class="note-icon"><img src="assets/icons/shield.svg" alt=""></span><strong>Service account key safety</strong></div><p>A Firebase service account JSON file contains a private key. Use a dedicated least-privilege service account where possible, keep the file private, rotate it if you think it has been exposed, and avoid using a key you do not trust a website to process.</p></aside></div></section>
+
+  <section class="content-section compact alt"><div class="page-shell"><div class="content-head"><span class="section-kicker">Developer guides</span><h2>FCM testing references</h2><p>Short practical guides for the most common Firebase notification testing tasks.</p></div><div class="link-grid">
+    <a class="link-card" href="guides/test-fcm-notification-online.html"><img class="card-arrow" src="assets/icons/arrow.svg" alt=""><span>Guide</span><h3>How to test an FCM notification online</h3><p>From Firebase credentials to a real device test.</p></a>
+    <a class="link-card" href="guides/firebase-service-account-json.html"><img class="card-arrow" src="assets/icons/arrow.svg" alt=""><span>Authentication</span><h3>Get a Firebase service account JSON key</h3><p>Where the JSON key comes from and how to handle it safely.</p></a>
+    <a class="link-card" href="guides/get-fcm-device-token.html"><img class="card-arrow" src="assets/icons/arrow.svg" alt=""><span>Device token</span><h3>How to get an FCM registration token</h3><p>Find the token your app needs for a single-device test.</p></a>
+    <a class="link-card" href="guides/fcm-http-v1-api.html"><img class="card-arrow" src="assets/icons/arrow.svg" alt=""><span>HTTP v1</span><h3>FCM HTTP v1 API explained</h3><p>Why legacy server keys were replaced by OAuth authorization.</p></a>
+  </div></div></section>
+
+  <section class="content-section compact" id="faq"><div class="page-shell"><div class="content-head"><span class="section-kicker">FAQ</span><h2>FCM notification tester questions</h2></div><div class="faq-list">
+    <article class="faq-item"><h3>Does this use the old FCM legacy API?</h3><p>No. The send flow uses Firebase Cloud Messaging HTTP v1 and a short-lived OAuth 2.0 access token created from the supplied service account credentials.</p></article>
+    <article class="faq-item"><h3>Where do I get the Firebase JSON file?</h3><p>In Firebase Console, open Project settings, then Service accounts, and generate a new private key for a service account you are authorized to use.</p></article>
+    <article class="faq-item"><h3>What is the device token?</h3><p>It is the FCM registration token generated by the Firebase Messaging SDK for an app installation. Paste that token into the tester to send to that device registration.</p></article>
+    <article class="faq-item"><h3>Can I send custom data with the notification?</h3><p>Yes. Enter an optional JSON object in Custom data. FCM data values are sent as strings; non-string JSON values are serialized before the request is sent.</p></article>
+  </div></div></section>
+  <div class="ad-host" data-ad-slot="footer" hidden aria-label="Advertisement"></div>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-copy">
+      <a class="brand footer-brand" href="./"><span class="brand-mark"><img class="brand-icon" src="assets/img/brand-icon.png" alt="FCM Notification Tester icon"></span><span class="brand-text"><span class="brand-name"><span class="brand-fcm">FCM</span> Notification Tester</span><small>Firebase push notification tool</small></span></a>
+      <p>Test Firebase Cloud Messaging notifications with a focused HTTP v1 workflow built for developers.</p>
+      <div class="footer-badges"><span class="footer-badge">FCM HTTP v1</span><span class="footer-badge">No signup</span><span class="footer-badge">Developer tool</span></div>
+    </div>
+    <div class="footer-column"><strong>Product</strong><a href="#tester">Notification tester</a><a href="#how-it-works">How it works</a><a href="docs.html">Guides</a></div>
+    <div class="footer-column"><strong>Resources</strong><a href="guides/fcm-http-v1-api.html">FCM HTTP v1</a><a href="guides/get-fcm-device-token.html">Get device token</a><a href="guides/firebase-service-account-json.html">Service account JSON</a></div>
+    <div class="footer-column"><strong>Legal</strong><a href="privacy.html">Privacy</a><a href="security.html">Security</a><a href="terms.html">Terms</a><a href="about.html">About</a></div>
+  </div>
+  <div class="footer-bottom"><span>© <span data-year></span> FCM Notification Tester</span><span>Independent developer tool. Not affiliated with Google or Firebase.</span></div>
+</footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="assets/js/site.js" defer></script><script src="assets/js/app.js" defer></script><script src="assets/js/ads.js" defer></script>
+</body></html>
