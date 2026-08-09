@@ -14,7 +14,7 @@ function normalizeUrl(raw) {
 const siteUrl = normalizeUrl(
   process.env.SITE_URL ||
   process.env.VERCEL_PROJECT_PRODUCTION_URL ||
-  'http://localhost:4173'
+  'https://fcmnotifier.codemicros.com'
 );
 const verification = String(process.env.GOOGLE_SITE_VERIFICATION || '').trim().replace(/["<>]/g, '');
 const apiEndpoint = process.env.FCM_RELAY_URL || '/api/send';
@@ -47,7 +47,7 @@ function copyTree(sourceDir, targetDir) {
   }
 }
 
-for (const file of ['index.html','docs.html','about.html','privacy.html','security.html','terms.html','404.html','favicon.svg','llms.txt']) {
+for (const file of ['index.html', 'docs.html', 'about.html', 'privacy.html', 'security.html', 'terms.html', '404.html', 'favicon.svg', 'llms.txt']) {
   const source = path.join(root, file);
   if (!fs.existsSync(source)) continue;
   let content = fs.readFileSync(source);
@@ -92,11 +92,12 @@ const indexed = [
   '/',
   '/docs.html',
   '/about.html',
-  '/guides/test-fcm-notification-online.html',
-  '/guides/firebase-service-account-json.html',
-  '/guides/get-fcm-device-token.html',
+  '/guides/firebase-push-notification-testing.html',
   '/guides/fcm-http-v1-api.html',
-  '/guides/fcm-notification-not-showing.html'
+  '/guides/get-fcm-access-token.html',
+  '/guides/get-fcm-registration-token.html',
+  '/guides/fcm-notification-not-showing.html',
+  '/guides/fcm-error-codes.html'
 ];
 const lastmod = new Date().toISOString().slice(0, 10);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${indexed.map((url) => `  <url><loc>${siteUrl}${url}</loc><lastmod>${lastmod}</lastmod></url>`).join('\n')}\n</urlset>\n`;
