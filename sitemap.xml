@@ -1,12 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>{{SITE_URL}}/</loc></url>
-  <url><loc>{{SITE_URL}}/docs.html</loc></url>
-  <url><loc>{{SITE_URL}}/about.html</loc></url>
-  <url><loc>{{SITE_URL}}/guides/firebase-push-notification-testing.html</loc></url>
-  <url><loc>{{SITE_URL}}/guides/fcm-http-v1-api.html</loc></url>
-  <url><loc>{{SITE_URL}}/guides/get-fcm-access-token.html</loc></url>
-  <url><loc>{{SITE_URL}}/guides/get-fcm-registration-token.html</loc></url>
-  <url><loc>{{SITE_URL}}/guides/fcm-notification-not-showing.html</loc></url>
-  <url><loc>{{SITE_URL}}/guides/fcm-error-codes.html</loc></url>
+
+  <url>
+    <loc>https://fcmnotifier.codemicros.com/</loc>
+  </url>
+
+  <url>
+    <loc>https://fcmnotifier.codemicros.com/docs.html</loc>
+  </url>
+
+  <url>
+    <loc>https://fcmnotifier.codemicros.com/about.html</loc>
+  </url>
+
+  <url>
+    <loc>https://fcmnotifier.codemicros.com/guides/firebase-push-notification-testing.html</loc>
+  </url>
+
+  <url>
+    <loc>https://fcmnotifier.codemicros.com/guides/fcm-http-v1-api.html</loc>
+  </url>
+
+  <url>
+    <loc>https://fcmnotifier.codemicros.com/guides/get-fcm-access-token.html</loc>
+  </url>
+
+  <url>
+    <loc>https://fcmnotifier.codemicros.com/guides/get-fcm-registration-token.html</loc>
+  </url>
+
+  <url>
+    <loc>https://fcmnotifier.codemicros.com/guides/fcm-notification-not-showing.html</loc>
+  </url>
+
+  <url>
+    <loc>https://fcmnotifier.codemicros.com/guides/fcm-error-codes.html</loc>
+  </url>
+
 </urlset>
