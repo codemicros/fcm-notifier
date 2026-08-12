@@ -120,6 +120,8 @@
           <div class="field"><label for="deviceToken">FCM device token</label><textarea id="deviceToken" class="textarea token" spellcheck="false" autocomplete="off" placeholder="Paste the Firebase Cloud Messaging registration token"></textarea></div>
           <div class="field"><label for="notificationTitle">Title</label><input id="notificationTitle" class="input" type="text" maxlength="180" placeholder="Test notification"></div>
           <div class="field"><label for="notificationMessage">Message</label><textarea id="notificationMessage" class="textarea" maxlength="2000" placeholder="This is a test Firebase push notification."></textarea></div>
+          <div class="field"><div class="label-row"><label for="notificationImage">Image URL</label><span class="optional">Optional</span></div><input id="notificationImage" class="input" type="url" placeholder="https://example.com/image.png"></div>
+          <div class="field"><div class="label-row"><label for="notificationLink">Click-through link</label><span class="optional">Optional</span></div><input id="notificationLink" class="input" type="url" placeholder="https://example.com"></div>
           <div class="field"><div class="label-row"><label for="customData">Custom data</label><span class="optional">Optional JSON object</span></div><textarea id="customData" class="textarea data" spellcheck="false" placeholder='{"screen":"home","id":"123"}'></textarea></div>
           <button id="sendButton" class="send-button" type="submit"><img src="assets/icons/send.svg" alt=""><span class="button-label">Send Notification</span></button>
           <div id="result" class="result" hidden role="status" aria-live="polite"><strong id="resultTitle"></strong><p id="resultText"></p></div>
