@@ -47,7 +47,7 @@ function copyTree(sourceDir, targetDir) {
   }
 }
 
-for (const file of ['index.html', 'docs.html', 'about.html', 'privacy.html', 'security.html', 'terms.html', '404.html', 'favicon.svg', 'llms.txt']) {
+for (const file of ['index.html', 'docs.html', 'about.html', 'privacy.html', 'security.html', 'terms.html', '404.html', 'favicon.svg', 'favicon.ico', 'site.webmanifest', 'llms.txt']) {
   const source = path.join(root, file);
   if (!fs.existsSync(source)) continue;
   let content = fs.readFileSync(source);
