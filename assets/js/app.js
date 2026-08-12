@@ -9,8 +9,6 @@
   const deviceToken = $('deviceToken');
   const title = $('notificationTitle');
   const message = $('notificationMessage');
-  const image = $('notificationImage');
-  const link = $('notificationLink');
   const data = $('customData');
   const sendButton = $('sendButton');
   const result = $('result');
@@ -123,18 +121,6 @@
     return parsed;
   }
 
-  function parseUrlField(el, label) {
-    const raw = el.value.trim();
-    if (!raw) return undefined;
-    try {
-      const parsed = new URL(raw);
-      if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') throw new Error();
-    } catch {
-      throw new Error(`${label} must be a valid http(s) URL.`);
-    }
-    return raw;
-  }
-
   function parseCustomData() {
     const raw = data.value.trim();
     if (!raw) return undefined;
@@ -199,13 +185,9 @@
 
     let serviceAccount;
     let customData;
-    let imageUrl;
-    let linkUrl;
     try {
       serviceAccount = parseServiceAccount();
       customData = parseCustomData();
-      imageUrl = parseUrlField(image, 'Image URL');
-      linkUrl = parseUrlField(link, 'Click-through link');
     } catch (error) {
       toastMessage(error.message, 'error');
       return;
@@ -216,8 +198,8 @@
     const notificationMessage = message.value.trim();
 
     if (!token) return toastMessage('Enter the device token.', 'error');
-    if (!notificationTitle && !notificationMessage && !customData && !imageUrl && !linkUrl) {
-      return toastMessage('Add a title, message, image, link, or custom data.', 'error');
+    if (!notificationTitle && !notificationMessage && !customData) {
+      return toastMessage('Add a title, message, or custom data.', 'error');
     }
 
     sendButton.disabled = true;
@@ -226,17 +208,12 @@
     if (buttonLabel) buttonLabel.textContent = 'Sending...';
 
     const fcmMessage = { token };
-    if (notificationTitle || notificationMessage || imageUrl) {
+    if (notificationTitle || notificationMessage) {
       fcmMessage.notification = {};
       if (notificationTitle) fcmMessage.notification.title = notificationTitle;
       if (notificationMessage) fcmMessage.notification.body = notificationMessage;
-      if (imageUrl) fcmMessage.notification.image = imageUrl;
     }
-    if (linkUrl) fcmMessage.webpush = { fcm_options: { link: linkUrl } };
-    if (customData || linkUrl) {
-      fcmMessage.data = { ...customData };
-      if (linkUrl) fcmMessage.data.link = linkUrl;
-    }
+    if (customData) fcmMessage.data = customData;
 
     try {
       const payload = await sendFcmMessage(serviceAccount, fcmMessage);
