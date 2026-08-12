@@ -20,6 +20,7 @@ const verification = String(process.env.GOOGLE_SITE_VERIFICATION || '').trim().r
 const apiEndpoint = process.env.FCM_RELAY_URL || '/api/send';
 const adsensePublisherId = process.env.ADSENSE_PUBLISHER_ID || 'pub-4306028074375583';
 const adsenseClient = process.env.ADSENSE_CLIENT || 'ca-pub-4306028074375583';
+const adsenseSlotTop = process.env.ADSENSE_SLOT_TOP || '5842001493';
 
 fs.rmSync(dist, { recursive: true, force: true });
 fs.mkdirSync(dist, { recursive: true });
@@ -66,7 +67,7 @@ const runtimeConfig = `window.PUSHCRAFT_CONFIG = ${JSON.stringify({
   adsense: {
     client: adsenseClient,
     slots: {
-      top: process.env.ADSENSE_SLOT_TOP || '',
+      top: adsenseSlotTop,
       middle: process.env.ADSENSE_SLOT_MIDDLE || '',
       footer: process.env.ADSENSE_SLOT_FOOTER || ''
     }
