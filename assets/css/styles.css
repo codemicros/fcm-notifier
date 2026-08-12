@@ -322,6 +322,21 @@ label { color: #33425c; font-size: 13px; font-weight: 800; }
   line-height: 1.6;
 }
 .security-note img { width: 15px; height: 15px; margin-top: 1px; flex: 0 0 auto; }
+.field-example {
+  margin: 8px 0 0;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #78869b;
+}
+.field-example code {
+  padding: 2px 5px;
+  border: 1px solid #dde5f0;
+  border-radius: 5px;
+  background: #f6f8fc;
+  font-family: var(--mono);
+  font-size: .95em;
+  color: #3a4a63;
+}
 .send-button {
   width: 100%;
   min-height: 54px;
