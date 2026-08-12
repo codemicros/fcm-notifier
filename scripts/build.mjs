@@ -18,6 +18,8 @@ const siteUrl = normalizeUrl(
 );
 const verification = String(process.env.GOOGLE_SITE_VERIFICATION || '').trim().replace(/["<>]/g, '');
 const apiEndpoint = process.env.FCM_RELAY_URL || '/api/send';
+const adsensePublisherId = process.env.ADSENSE_PUBLISHER_ID || 'pub-4306028074375583';
+const adsenseClient = process.env.ADSENSE_CLIENT || 'ca-pub-4306028074375583';
 
 fs.rmSync(dist, { recursive: true, force: true });
 fs.mkdirSync(dist, { recursive: true });
@@ -62,7 +64,7 @@ const runtimeConfig = `window.PUSHCRAFT_CONFIG = ${JSON.stringify({
   siteUrl,
   apiEndpoint,
   adsense: {
-    client: process.env.ADSENSE_CLIENT || '',
+    client: adsenseClient,
     slots: {
       top: process.env.ADSENSE_SLOT_TOP || '',
       middle: process.env.ADSENSE_SLOT_MIDDLE || '',
@@ -104,7 +106,6 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://w
 fs.writeFileSync(path.join(dist, 'sitemap.xml'), sitemap);
 fs.writeFileSync(path.join(dist, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}/sitemap.xml\n`);
 
-const publisher = String(process.env.ADSENSE_PUBLISHER_ID || '').trim();
-fs.writeFileSync(path.join(dist, 'ads.txt'), publisher ? `google.com, ${publisher}, DIRECT, f08c47fec0942fa0\n` : '# Set ADSENSE_PUBLISHER_ID in production to generate the AdSense ads.txt record.\n');
+fs.writeFileSync(path.join(dist, 'ads.txt'), `google.com, ${adsensePublisherId}, DIRECT, f08c47fec0942fa0\n`);
 
 console.log(`Built FCM Notification Tester for ${siteUrl}`);
