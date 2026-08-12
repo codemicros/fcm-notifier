@@ -91,16 +91,16 @@ if (process.env.VERCEL_ENV === 'preview') {
   }
 }
 
+const guideFiles = fs.readdirSync(path.join(root, 'guides'))
+  .filter((name) => name.endsWith('.html'))
+  .sort()
+  .map((name) => `/guides/${name}`);
+
 const indexed = [
   '/',
   '/docs.html',
   '/about.html',
-  '/guides/firebase-push-notification-testing.html',
-  '/guides/fcm-http-v1-api.html',
-  '/guides/get-fcm-access-token.html',
-  '/guides/get-fcm-registration-token.html',
-  '/guides/fcm-notification-not-showing.html',
-  '/guides/fcm-error-codes.html'
+  ...guideFiles
 ];
 const lastmod = new Date().toISOString().slice(0, 10);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${indexed.map((url) => `  <url><loc>${siteUrl}${url}</loc><lastmod>${lastmod}</lastmod></url>`).join('\n')}\n</urlset>\n`;
