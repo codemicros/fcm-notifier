@@ -1,0 +1,14 @@
+{
+  "name": "fcm-notification-tester",
+  "version": "4.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A simple Firebase Cloud Messaging HTTP v1 notification tester using a service account JSON file, device token, notification title, message and optional data.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node --check assets/js/app.js && node --check assets/js/site.js && node --check assets/js/ads.js && node --check scripts/build.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
