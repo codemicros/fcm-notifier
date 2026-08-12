@@ -337,6 +337,32 @@ label { color: #33425c; font-size: 13px; font-weight: 800; }
   font-size: .95em;
   color: #3a4a63;
 }
+.payload-preview { margin: 18px 0 0; }
+.payload-preview summary {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  color: #3a4a63;
+  padding: 6px 0;
+  list-style: none;
+}
+.payload-preview summary::-webkit-details-marker { display: none; }
+.payload-preview summary::before { content: "▸ "; color: #96a2b3; }
+.payload-preview[open] summary::before { content: "▾ "; }
+.payload-json {
+  margin: 8px 0 0;
+  padding: 14px 16px;
+  border: 1px solid #dde5f0;
+  border-radius: 12px;
+  background: #f7f9fc;
+  color: #26334b;
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.65;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
 .send-button {
   width: 100%;
   min-height: 54px;

@@ -10,6 +10,7 @@
   const title = $('notificationTitle');
   const message = $('notificationMessage');
   const data = $('customData');
+  const payloadPreview = $('payloadPreview');
   const sendButton = $('sendButton');
   const result = $('result');
   const resultTitle = $('resultTitle');
@@ -63,9 +64,9 @@
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({ grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer', assertion: jwt })
     });
-    const payload = await response.json().catch(() => ({}));
-    if (!response.ok || !payload.access_token) {
-      throw new Error(payload.error_description || payload.error || 'Could not authenticate the Firebase service account.');
+    const payload = await response.json().catch(() => null);
+    if (!response.ok || !payload?.access_token) {
+      throw new Error(payload?.error_description || payload?.error || 'Could not authenticate the Firebase service account.');
     }
     return payload.access_token;
   }
@@ -135,6 +136,30 @@
     return output;
   }
 
+  function buildFcmMessage(token, notificationTitle, notificationMessage, customData) {
+    const fcmMessage = { token };
+    if (notificationTitle || notificationMessage) {
+      fcmMessage.notification = {};
+      if (notificationTitle) fcmMessage.notification.title = notificationTitle;
+      if (notificationMessage) fcmMessage.notification.body = notificationMessage;
+    }
+    if (customData) fcmMessage.data = customData;
+    return fcmMessage;
+  }
+
+  function refreshPayloadPreview() {
+    if (!payloadPreview) return;
+    let previewData;
+    try { previewData = parseCustomData(); } catch { previewData = undefined; }
+    const fcmMessage = buildFcmMessage(
+      deviceToken.value.trim() || '<your-device-token>',
+      title.value.trim(),
+      message.value.trim(),
+      previewData
+    );
+    payloadPreview.textContent = JSON.stringify({ message: fcmMessage }, null, 2);
+  }
+
   function showResult(ok, heading, detail) {
     result.hidden = false;
     result.className = `result ${ok ? 'success' : 'error'}`;
@@ -179,6 +204,9 @@
     }
   });
 
+  [deviceToken, title, message, data].forEach((el) => el.addEventListener('input', refreshPayloadPreview));
+  refreshPayloadPreview();
+
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     result.hidden = true;
@@ -207,13 +235,7 @@
     const buttonLabel = sendButton.querySelector('.button-label');
     if (buttonLabel) buttonLabel.textContent = 'Sending...';
 
-    const fcmMessage = { token };
-    if (notificationTitle || notificationMessage) {
-      fcmMessage.notification = {};
-      if (notificationTitle) fcmMessage.notification.title = notificationTitle;
-      if (notificationMessage) fcmMessage.notification.body = notificationMessage;
-    }
-    if (customData) fcmMessage.data = customData;
+    const fcmMessage = buildFcmMessage(token, notificationTitle, notificationMessage, customData);
 
     try {
       const payload = await sendFcmMessage(serviceAccount, fcmMessage);
