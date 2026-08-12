@@ -337,6 +337,32 @@ label { color: #33425c; font-size: 13px; font-weight: 800; }
   font-size: .95em;
   color: #3a4a63;
 }
+.mode-toggle {
+  display: flex;
+  gap: 6px;
+  padding: 4px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  background: #eef2f8;
+  border: 1px solid #dde5f0;
+}
+.mode-option {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #5b6b83;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease, box-shadow .15s ease;
+}
+.mode-option input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.mode-option.is-active { background: #fff; color: var(--blue-dark); box-shadow: 0 4px 12px rgba(41,88,214,.14); }
+.mode-fields[hidden] { display: none; }
 .payload-preview { margin: 18px 0 0; }
 .payload-preview summary {
   cursor: pointer;

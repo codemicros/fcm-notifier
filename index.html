@@ -118,9 +118,49 @@
         <div class="form-section">
           <div class="section-heading"><span class="icon-tile violet"><img src="assets/icons/device.svg" alt=""></span><div><h2>Notification</h2><p>Paste the device token and enter the message you want to test.</p></div></div>
           <div class="field"><label for="deviceToken">FCM device token</label><textarea id="deviceToken" class="textarea token" spellcheck="false" autocomplete="off" placeholder="Paste the Firebase Cloud Messaging registration token"></textarea></div>
-          <div class="field"><label for="notificationTitle">Title</label><input id="notificationTitle" class="input" type="text" maxlength="180" placeholder="Test notification"></div>
-          <div class="field"><label for="notificationMessage">Message</label><textarea id="notificationMessage" class="textarea" maxlength="2000" placeholder="This is a test Firebase push notification."></textarea></div>
-          <div class="field"><div class="label-row"><label for="customData">Custom data</label><span class="optional">Optional JSON object</span></div><textarea id="customData" class="textarea data" spellcheck="false" placeholder='{"screen":"home","id":"123"}'></textarea><p class="field-example">Example: <code>{"screen":"home","id":"123","promo":true}</code> — keys stay as-is, values are sent to your app as strings.</p></div>
+
+          <div class="mode-toggle" role="tablist" aria-label="Notification mode">
+            <label class="mode-option is-active"><input type="radio" name="notifMode" value="simple" checked><span>Simple</span></label>
+            <label class="mode-option"><input type="radio" name="notifMode" value="advanced"><span>Advanced payload</span></label>
+          </div>
+
+          <div id="simpleFields" class="mode-fields">
+            <div class="field"><label for="notificationTitle">Title</label><input id="notificationTitle" class="input" type="text" maxlength="180" placeholder="Test notification"></div>
+            <div class="field"><label for="notificationMessage">Message</label><textarea id="notificationMessage" class="textarea" maxlength="2000" placeholder="This is a test Firebase push notification."></textarea></div>
+            <div class="field"><div class="label-row"><label for="notificationImage">Image URL</label><span class="optional">Optional</span></div><input id="notificationImage" class="input" type="url" placeholder="https://example.com/image.png"></div>
+            <div class="field"><div class="label-row"><label for="customData">Custom data</label><span class="optional">Optional JSON object</span></div><textarea id="customData" class="textarea data" spellcheck="false" placeholder='{"screen":"home","id":"123"}'></textarea><p class="field-example">Example: <code>{"screen":"home","id":"123","promo":true}</code> — keys stay as-is, values are sent to your app as strings.</p></div>
+          </div>
+
+          <div id="advancedFields" class="mode-fields" hidden>
+            <div class="field">
+              <label for="notificationPreset">Notification type</label>
+              <select id="notificationPreset" class="input">
+                <option value="">Choose a template…</option>
+                <optgroup label="Common">
+                  <option value="1_basic_notification">Basic notification</option>
+                  <option value="2_notification_with_data">Notification + data</option>
+                  <option value="3_data_only">Data only</option>
+                  <option value="4_notification_with_image">Notification + image</option>
+                </optgroup>
+                <optgroup label="Android">
+                  <option value="5_android_notification">Android notification</option>
+                  <option value="6_android_notification_with_image">Android notification + image</option>
+                </optgroup>
+                <optgroup label="iOS">
+                  <option value="7_ios_notification">iOS notification</option>
+                  <option value="8_ios_notification_with_image">iOS notification + image</option>
+                </optgroup>
+                <optgroup label="Cross-platform">
+                  <option value="9_android_ios">Android + iOS</option>
+                  <option value="10_android_ios_with_image">Android + iOS + image</option>
+                  <option value="11_full_notification">Full notification</option>
+                </optgroup>
+              </select>
+              <p id="presetDescription" class="field-example">Pick a template to fill in the payload below, then edit it freely.</p>
+            </div>
+            <div class="field"><div class="label-row"><label for="advancedPayload">Message payload</label><span class="optional">JSON — token is added automatically</span></div><textarea id="advancedPayload" class="textarea data" spellcheck="false" placeholder='{"notification":{"title":"Hello","body":"Test notification"},"data":{"type":"test"}}'></textarea><p class="field-example">Don't include <code>token</code> — the device token above is merged in automatically when sending.</p></div>
+          </div>
+
           <details class="payload-preview"><summary>Preview the exact FCM payload</summary><pre id="payloadPreview" class="payload-json"></pre></details>
           <button id="sendButton" class="send-button" type="submit"><img src="assets/icons/send.svg" alt=""><span class="button-label">Send Notification</span></button>
           <div id="result" class="result" hidden role="status" aria-live="polite"><strong id="resultTitle"></strong><p id="resultText"></p></div>
